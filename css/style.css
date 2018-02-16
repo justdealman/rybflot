@@ -793,6 +793,10 @@ div.checker,div.radio{position:relative}div.checker,div.checker input,div.checke
 	line-height:20px;
 	margin:0 0 16px;
 }
+.text-b img {
+	max-width:100%;
+	height:auto !important;
+}
 .text-b__row {
 	clear:both;
 	overflow:hidden;

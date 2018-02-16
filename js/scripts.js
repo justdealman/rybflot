@@ -180,7 +180,7 @@ $(function() {
 				$('.nav').detach().insertAfter($('.header__logo'));
 			}
 			closeMenu();
-			if ( $('.table').length > 0 ) {
+			if ( $('table').length > 0 ) {
 				tableRebuild()
 			}
 		}
