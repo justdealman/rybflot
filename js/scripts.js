@@ -151,11 +151,18 @@ $(function() {
 				var p = $(this);
 				p.after('<div class="table-rebuild"></div>');
 				var t = p.next('.table-rebuild');
-				p.find('th').each(function() {
+				var size = p.find('tbody').find('tr').eq(0).find('td').size();
+				for ( var i=0; i<size; i++ ) {
 					t.append('<div class="table-rebuild__group">\
-						<span class="table-rebuild--title">'+$(this).text()+'</span>\
-						<div class="table-rebuild__content"></div>\
+						<div class="table-rebuild__content">\
+						</div>\
 					</div>');
+				}
+				p.find('thead tr').each(function() {
+					for ( var i=0; i<p.find('thead th').size(); i++ ) {
+						var item = $(this).find('th').eq(i).text();
+						$('<span class="table-rebuild--title">'+item+'</span>').prependTo(t.find('.table-rebuild__group').eq(i));
+					}
 				});
 				p.find('tbody tr').each(function() {
 					for ( var i=0; i<p.find('tbody tr').size(); i++ ) {
