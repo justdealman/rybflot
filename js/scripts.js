@@ -160,13 +160,13 @@ $(function() {
 				}
 				p.find('thead tr').each(function() {
 					for ( var i=0; i<p.find('thead th').size(); i++ ) {
-						var item = $(this).find('th').eq(i).text();
+						var item = $(this).find('th').eq(i).html();
 						$('<span class="table-rebuild--title">'+item+'</span>').prependTo(t.find('.table-rebuild__group').eq(i));
 					}
 				});
 				p.find('tbody tr').each(function() {
-					for ( var i=0; i<p.find('tbody tr').size(); i++ ) {
-						var item = $(this).find('td').eq(i).text();
+					for ( var i=0; i<p.find('tbody td').size(); i++ ) {
+						var item = $(this).find('td').eq(i).html();
 						$('<span class="table-rebuild--item">'+item+'</span>').appendTo(t.find('.table-rebuild__group').eq(i).find('.table-rebuild__content'));
 					}
 				});
